@@ -1,4 +1,26 @@
-@tailwind base; @tailwind components; @tailwind utilities;
-body{@apply bg-slate-50 text-slate-900 antialiased;} .container{@apply max-w-6xl mx-auto px-4;}
-.card{@apply bg-white rounded-2xl shadow-md;} .btn{@apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium;}
-.btn-primary{@apply bg-brand-600 text-white;} .btn-outline{@apply border border-slate-300;}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --radius: 14px; }
+
+body { @apply bg-slate-50 text-slate-900 antialiased; }
+.container { @apply max-w-6xl mx-auto px-4; }
+.card { @apply bg-white rounded-2xl shadow-md; }
+
+.btn { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium transition; }
+.btn-primary { @apply bg-brand-600 text-white hover:bg-brand-700 focus:ring-2 focus:ring-brand-500; }
+.btn-ghost { @apply text-slate-700 hover:text-brand-700; }
+.btn-outline { @apply border border-slate-300 hover:border-brand-600 hover:text-brand-700; }
+
+.badge { @apply inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium; }
+.pill { @apply inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700; }
+
+.hero {
+  @apply relative overflow-hidden rounded-2xl;
+  background: radial-gradient(1200px 600px at 10% 0%, #d9eeff 0, #eef8ff 45%, transparent 60%),
+             radial-gradient(1000px 500px at 100% 20%, #e6f0ff 0, transparent 60%);
+}
+.hero-shadow { box-shadow: 0 10px 30px -10px rgba(0,0,0,.15); }
+
+img { color: transparent; } /* avoid CLS alt rendering */
